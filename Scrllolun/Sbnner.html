@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script src="iscroll.Veb.js"></script>
+	<style>
+		html{
+			font-size: 20vw;
+		}
+		*{
+			margin:0;
+			padding:0;
+		}
+		#view{
+			width: 5rem;
+			height: 3rem;
+			/*border:0.01rem solid red;*/
+			position: relative;
+		}
+		#content{
+			width:30rem;
+			overflow: hidden;
+		}
+		#content div{
+			width: 5rem;
+			height: 3rem;
+			background: green;
+			color:white;
+			font-size:1rem;
+			text-align: center;
+			line-height: 3rem;
+			float:left;
+		}
+		#btn{
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom:0.2rem;
+		}
+		#btn button{
+			margin:0 0.05rem;
+			border:none;
+			outline: 0;
+			width: 0.2rem;
+			height: 0.2rem;
+			border-radius: 50%;
+			background: white;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="view">
+		
+		<div id="content">
+			<div>4</div>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>1</div>
+		</div>
+		<div id="btn">
+			<button></button>
+			<button></button>
+			<button></button>
+			<button></button>
+		</div>
+
+	</div>
+	
+
+</body>
+<script>
+
+	var num=parseInt(getComputedStyle(view,null).width);
+	// 设定记录页面变量初始值		
+	var isc=new iScroll("view",{
+		
+		// 隱藏水平滾動條
+		hScrollbar:false,
+		// 识别边缘
+		snap:true,
+		// 惯性
+		momentum:false,
+
+
+		snapThreshold:100,
+
+		// useTransition:true,
+		
+		x:-num,
+
+		onScrollEnd:function(){
+
+			if(this.currPageX==5){
+				// 瞬间回到真实的第一页
+				this.scrollToPage(1,0,0);
+
+			}
+
+			if(this.currPageX==0){
+				// 瞬间回到真实的第4页
+				this.scrollToPage(4,0,0);
+
+			}
+
+			
+			btn.children[pag-1].style.background="white"
+
+			btn.children[isc.currPageX-1].style.background="red"
+
+			pag=isc.currPageX;
+
+		},
+		// onScrollStart:function(){
+			
+		// }
+	
+	})
+
+	isc.currPageX=1;
+
+	var pag=isc.currPageX;
+	
+	btn.children[isc.currPageX-1].style.background="red"
+
+	function fun(){
+
+	}
+
+	setInterval(function(){
+
+	})
+</script>
+</html></head>
+<body>
+	
+</body>
+</html>
